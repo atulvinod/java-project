@@ -1,0 +1,148 @@
+<div class="mt-5 main-banner padding">
+
+  <div class="row">
+    <div class="col-md-8 col-sm-12">
+      <h4 class="heading">Your plasma can lives</h4>
+      <hr>
+      <p class="subheading">
+        Because you fought the infection, your plasma now contains COVID-19 antibodies. These antibodies provided one
+        way for your immune system to fight the virus when you were sick, so your plasma may be able to be used to help
+        others fight off the disease.
+      </p>
+      <br>
+      <button class="btn-info btn" [routerLink]="['searchDonor']"> Look for donors</button>
+    </div>
+    <div class="col-sm-4 roundbox headingbox">
+      <div class="text-center">
+        <h4>Become a plasma donor today!</h4>
+      </div>
+      <hr>
+      <div class="text-center ">
+        <button class="btn btn-danger btn-lg register-button">Register as Donor</button>
+      </div>
+      <div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>
+<div class="register-donor mt-5 padding roundbox">
+  <h2>Register as Donor</h2>
+  <hr>
+  <div class="row">
+    <div class="col-md-8 col-sm-12">
+      <form action="" [formGroup]="addDonorFrom
+        ">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">Your Name</span>
+          </div>
+          <input type="text" class="form-control" id="basic-url" formControlName="name" aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">Your Email</span>
+          </div>
+          <input type="email" formControlName="email" class="form-control" id="basic-url"
+            aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">Phone Number</span>
+          </div>
+          <input type="number" class="form-control" formControlName="phone" id="basic-url"
+            aria-describedby="basic-addon3">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Blood group</label>
+          </div>
+          <select class="custom-select" id="" formControlName="blood_group">
+            <option value="A+" selected>A+</option>
+            <option value="A-">A-</option>
+            <option value="A1+">A1+</option>
+            <option value="A1-">A1-</option>
+            <option value="A1B+">A1B+</option>
+            <option value="A1B-">A1B-</option>
+            <option value="A2+">A2+</option>
+            <option value="A2-">A2-</option>
+            <option value="A2B+">A2B+</option>
+            <option value="A2B-">A2B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="Bombay Blood Group">Bombay Blood Group</option>
+            <option value="INRA">INRA</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Country</label>
+          </div>
+          <select class="custom-select" id="" formControlName="country">
+            
+          
+                <option value="India">INDIA</option>
+                <option value="Nepal">NEPAL</option>
+          
+
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">State</label>
+          </div>
+          <select class="custom-select" id="" formControlName="state">
+              <option *ngIf="states.length==0"> ---</option>
+            <option *ngFor="let i of states; let k = index">{{states[k]}}</option>
+         
+              
+       
+
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">District</label>
+          </div>
+          <select class="custom-select" id="" formControlName="district">
+            <option *ngIf="districts.length==0"> ---</option>
+            <option  *ngFor="let i of districts; let k = index">{{districts[k]}}</option>
+           
+           
+          </select>
+        </div>
+
+
+      </form>
+    </div>
+    <div class="col-md-4 roundbox">
+      <div class="text-center">
+        <h5>Recovered in India</h5>
+        <br>
+        <h1 style="color: green;">
+          {{coronaRecoveredCount | number:'1.0':'en-US'}}
+        </h1>
+        <br>
+        <p>With your help, we can make India corona free!</p>
+        <br>
+        <hr>
+        <button class="btn btn-success btn-lg" [disabled]="addDonorFrom.valid==false" (click)="submit()">
+          Submit my details
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

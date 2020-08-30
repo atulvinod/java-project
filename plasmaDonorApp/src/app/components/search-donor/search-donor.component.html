@@ -1,0 +1,84 @@
+<div class="padding roundbox  mt-5">
+    
+    <h3 class="mt-2 mb-2">Search</h3>
+    <hr>
+    <form action="" [formGroup]="donorSearch
+    " (submit)="getData()">
+
+    <div class="form-row">
+        <div class="input-group mb-3 col-md-2" >
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Blood group</label>
+            </div>
+            <select class="custom-select" id="" formControlName="bloodGroup">
+              <option value="A+" selected>A+</option>
+              <option value="A-">A-</option>
+              <option value="A1+">A1+</option>
+              <option value="A1-">A1-</option>
+              <option value="A1B+">A1B+</option>
+              <option value="A1B-">A1B-</option>
+              <option value="A2+">A2+</option>
+              <option value="A2-">A2-</option>
+              <option value="A2B+">A2B+</option>
+              <option value="A2B-">A2B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="Bombay Blood Group">Bombay Blood Group</option>
+              <option value="INRA">INRA</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+          <div class="input-group mb-3 col-md-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Country</label>
+            </div>
+            <select class="custom-select" id="" formControlName="country">
+              
+            
+                  <option value="India">INDIA</option>
+                  <option value="Nepal">NEPAL</option>
+            
+      
+            </select>
+          </div>
+          <div class="input-group mb-3 col-md-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">State</label>
+            </div>
+            <select class="custom-select" id="" formControlName="state">
+                <option *ngIf="states.length==0"> ---</option>
+              <option *ngFor="let i of states; let k = index">{{states[k]}}</option>
+           
+                
+         
+      
+            </select>
+          </div>
+          <div class="input-group mb-3 col-md-4">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">District</label>
+            </div>
+            <select class="custom-select" id="" formControlName="district">
+              <option *ngIf="districts.length==0"> ---</option>
+              <option  *ngFor="let i of districts; let k = index">{{districts[k]}}</option>
+             
+             
+            </select>
+          </div>
+    </div>
+
+    <input type="submit" value="search" class="btn btn-success">
+
+  </form>
+</div>
+<hr>
+<div class="padding roundbox">
+<div class="text-center" *ngIf="searchData.length==0">
+    <h6>No search results</h6>
+</div>
+<app-donor-details *ngFor="let i of searchData" [donorData]=i></app-donor-details>
+
+</div>

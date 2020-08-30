@@ -1,0 +1,39 @@
+.main-banner{
+    background-image: linear-gradient(90deg, rgba(148,15,15,0.9110994739692753) 39%, rgba(255,255,255,0.23042720506171221) 64%, rgba(255,255,255,1) 100%),url("https://images.newindianexpress.com/uploads/user/imagelibrary/2020/5/31/w900X450/Corona02.jpg") ;
+    padding: 2%;
+    border-radius: 15px;
+  
+    background-size: cover;
+}
+.padding{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.heading{
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 3.5rem;
+    
+}
+.subheading{
+    color: white;
+    font-size: 1.2rem;
+}
+.roundbox{
+    border-radius: 10px;
+    border:1px solid lightgrey;
+    padding: 2%
+
+}
+.headingbox{
+    background-color: rgb(255,255,255,0.6);
+}
+.register-button{
+    padding: 4%;
+    margin-top: 2%;
+    background: #940f0f;
+}
+
+.register-donor > h2{
+    color: #940f0f;
+}
